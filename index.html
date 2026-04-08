@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaikhona</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Chaikhona</a>
+
+      <div class="header-right">
+        <div class="header-icons">
+          <a class="icon-btn" href="tel:01059497681" aria-label="Позвонить">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+
+          <a
+            class="icon-btn"
+            href="https://www.instagram.com/chaihana_incheon/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a
+            class="icon-btn"
+            href="https://map.kakao.com/?q=%EC%9D%B8%EC%B2%9C%20%EC%97%B0%EC%88%98%EA%B5%AC%20%EC%97%B0%EC%88%98%EB%8F%99%20522-4"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Kakao Map"
+          >
+            <i class="fa-solid fa-location-dot"></i>
+          </a>
+
+          <a
+            class="icon-btn"
+            href="https://maps.google.com/?q=%EC%9D%B8%EC%B2%9C%20%EC%97%B0%EC%88%98%EA%B5%AC%20%EC%97%B0%EC%88%98%EB%8F%99%20522-4"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Maps"
+          >
+            <i class="fa-brands fa-google"></i>
+          </a>
+        </div>
+
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="kr">KR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-badge" data-i18n="badge">Традиционная центральноазиатская кухня</p>
+        <h1 data-i18n="title">Добро пожаловать в Chaikhona</h1>
+        <p class="hero-text" data-i18n="subtitle">
+          Вкусная еда, уютная атмосфера и настоящий вкус в Инчхоне.
+        </p>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <div class="container page-layout">
+        <div class="content-column">
+          <div class="menu-grid" id="menuGrid"></div>
+        </div>
+
+        <aside class="cart desktop-cart">
+          <div class="cart-card">
+            <div class="cart-top">
+              <h3 data-i18n="cartTitle">Ваш заказ</h3>
+              <span class="cart-count" id="cartCount">0</span>
+            </div>
+
+            <div class="cart-items" id="cartItems">
+              <p class="cart-empty" data-i18n="cartEmpty">Корзина пуста</p>
+            </div>
+
+            <div class="cart-bottom">
+              <div class="cart-total-row">
+                <span data-i18n="total">Итого</span>
+                <strong id="cartTotal">₩0</strong>
+              </div>
+
+              <button class="checkout-btn" id="openOrderModalBtn">
+                <i class="fa-brands fa-telegram"></i>
+                <span data-i18n="checkout">Оформить заказ</span>
+              </button>
+
+              <button class="clear-btn" id="clearCartBtn" data-i18n="clearCart">
+                Очистить корзину
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a
+        class="footer-link"
+        href="https://www.instagram.com/chaihana_incheon/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+
+      <a
+        class="footer-link"
+        href="https://map.kakao.com/?q=%EC%9D%B8%EC%B2%9C%20%EC%97%B0%EC%88%98%EA%B5%AC%20%EC%97%B0%EC%88%98%EB%8F%99%20522-4"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-location-dot"></i>
+        <span>인천 연수구 연수동 522-4</span>
+      </a>
+
+      <a class="footer-link" href="tel:01059497681">
+        <i class="fa-solid fa-phone"></i>
+        <span>01059497681</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- MOBILE FLOATING CATEGORY NAV -->
+  <div class="mobile-category-nav" id="mobileCategoryNav"></div>
+
+  <!-- MOBILE FLOATING CART BUTTON -->
+  <button class="mobile-cart-btn" id="mobileCartBtn" aria-label="Cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="mobileCartCount">0</span>
+  </button>
+
+  <!-- MOBILE CART PANEL -->
+  <div class="mobile-cart-panel hidden" id="mobileCartPanel">
+    <div class="mobile-cart-overlay" id="mobileCartOverlay"></div>
+    <div class="mobile-cart-sheet">
+      <div class="mobile-cart-head">
+        <h3 data-i18n="cartTitle">Ваш заказ</h3>
+        <button class="mobile-cart-close" id="mobileCartCloseBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="cart-items" id="mobileCartItems">
+        <p class="cart-empty" data-i18n="cartEmpty">Корзина пуста</p>
+      </div>
+
+      <div class="cart-bottom">
+        <div class="cart-total-row">
+          <span data-i18n="total">Итого</span>
+          <strong id="mobileCartTotal">₩0</strong>
+        </div>
+
+        <button class="checkout-btn" id="mobileOpenOrderModalBtn">
+          <i class="fa-brands fa-telegram"></i>
+          <span data-i18n="checkout">Оформить заказ</span>
+        </button>
+
+        <button class="clear-btn" id="mobileClearCartBtn" data-i18n="clearCart">
+          Очистить корзину
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER MODAL -->
+  <div class="modal hidden" id="orderModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-content modal-order">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h3 data-i18n="modalTitle">Оформление заказа</h3>
+
+      <form id="orderForm" class="order-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="customerName" data-i18n="nameLabel">Имя</label>
+            <input type="text" id="customerName" name="customerName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone" data-i18n="phoneLabel">Телефон</label>
+            <input type="text" id="customerPhone" name="customerPhone" />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="deliveryType" data-i18n="deliveryLabel">Способ получения</label>
+            <select id="deliveryType" name="deliveryType">
+              <option value="pickup">Самовывоз</option>
+              <option value="hall">В зал / к столу</option>
+              <option value="delivery">Доставка</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="comment" data-i18n="commentLabel">Комментарий</label>
+          <textarea id="comment" name="comment" rows="4"></textarea>
+        </div>
+
+        <div class="order-summary-box">
+          <div class="summary-head">
+            <h4 data-i18n="yourOrder">Ваш заказ</h4>
+            <span id="modalOrderCount">0</span>
+          </div>
+          <div id="modalOrderList"></div>
+          <div class="order-summary-total">
+            <span data-i18n="total">Итого</span>
+            <strong id="modalOrderTotal">₩0</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-order-btn" id="submitOrderBtn">
+          <i class="fa-brands fa-telegram"></i>
+          <span data-i18n="sendOrder">Отправить заказ</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./netlify/functions/send-order.js"></script>
+</body>
+</html>
