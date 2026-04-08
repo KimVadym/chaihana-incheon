@@ -139,6 +139,7 @@ img {
   overflow-x: auto;
   padding: 14px 0;
   scrollbar-width: none;
+  opacity: 0.53;
 }
 
 .top-category-inner::-webkit-scrollbar {
@@ -321,6 +322,20 @@ img {
   line-height: 1.65;
   min-height: 48px;
 }
+/*  */
+.card-ingredients {
+  font-size: 13px;
+  color: #9aa0aa;
+  margin-bottom: 6px;
+}
+
+.card-about {
+  font-size: 14px;
+  color: #c9ccd6;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+/*  */
 
 .card-actions {
   display: flex;
@@ -821,6 +836,7 @@ img {
     border-radius: 18px;
     padding: 10px 8px;
     box-shadow: var(--shadow);
+    opacity: 0.53;
   }
 
   .cat-icon-btn {
