@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -19,7 +20,7 @@
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a href="#" class="logo">Chaikhona</a>
+      <a href="#" class="logo">Chaihana</a>
 
       <div class="header-right">
         <div class="header-icons">
@@ -67,11 +68,17 @@
     </div>
   </header>
 
+  <div class="top-category-nav">
+    <div class="container">
+      <div class="top-category-inner" id="topCategoryNav"></div>
+    </div>
+  </div>
+
   <main>
     <section class="hero">
       <div class="container">
         <p class="hero-badge" data-i18n="badge">Традиционная центральноазиатская кухня</p>
-        <h1 data-i18n="title">Добро пожаловать в Chaikhona</h1>
+        <h1 data-i18n="title">Добро пожаловать в Chaihana</h1>
         <p class="hero-text" data-i18n="subtitle">
           Вкусная еда, уютная атмосфера и настоящий вкус в Инчхоне.
         </p>
@@ -81,7 +88,7 @@
     <section class="menu-section">
       <div class="container page-layout">
         <div class="content-column">
-          <div class="menu-grid" id="menuGrid"></div>
+          <div id="menuGrid"></div>
         </div>
 
         <aside class="cart desktop-cart">
@@ -145,16 +152,13 @@
     </div>
   </footer>
 
-  <!-- MOBILE FLOATING CATEGORY NAV -->
   <div class="mobile-category-nav" id="mobileCategoryNav"></div>
 
-  <!-- MOBILE FLOATING CART BUTTON -->
   <button class="mobile-cart-btn" id="mobileCartBtn" aria-label="Cart">
     <i class="fa-solid fa-cart-shopping"></i>
     <span id="mobileCartCount">0</span>
   </button>
 
-  <!-- MOBILE CART PANEL -->
   <div class="mobile-cart-panel hidden" id="mobileCartPanel">
     <div class="mobile-cart-overlay" id="mobileCartOverlay"></div>
     <div class="mobile-cart-sheet">
@@ -187,7 +191,6 @@
     </div>
   </div>
 
-  <!-- ORDER MODAL -->
   <div class="modal hidden" id="orderModal">
     <div class="modal-overlay" id="modalOverlay"></div>
 
@@ -248,7 +251,7 @@
   <div class="toast" id="toast"></div>
 
   <script src="./js/data.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./netlify/functions/send-order.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./netlify/functions/send-order.js"></script>
 </body>
 </html>

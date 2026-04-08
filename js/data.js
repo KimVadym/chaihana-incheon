@@ -1,11 +1,7 @@
 const MENU_DATA = [
   {
     category: "grill",
-    categoryLabel: {
-      ru: "Мангал",
-      en: "Grill",
-      kr: "그릴"
-    },
+    categoryLabel: { ru: "Мангал", en: "Grill", kr: "그릴" },
     items: [
       { id: 1, name: { ru: "Баранина кусками", en: "Lamb pieces", kr: "양고기 조각" }, desc: { ru: "180 г", en: "180 g", kr: "180g" }, price: 13000, image: "./images/grill.png" },
       { id: 2, name: { ru: "Говядина люля кебаб", en: "Beef lula kebab", kr: "소고기 룰랴 케밥" }, desc: { ru: "180 г", en: "180 g", kr: "180g" }, price: 13000, image: "./images/grill.png" },
@@ -21,11 +17,7 @@ const MENU_DATA = [
   },
   {
     category: "pilaf",
-    categoryLabel: {
-      ru: "Плов и основные",
-      en: "Pilaf & mains",
-      kr: "플로브와 메인"
-    },
+    categoryLabel: { ru: "Плов и основные", en: "Pilaf & mains", kr: "플로브와 메인" },
     items: [
       { id: 11, name: { ru: "Ошли джиз", en: "Oshli djiz", kr: "오슐리 지즈" }, desc: { ru: "Фирменное блюдо", en: "Signature dish", kr: "대표 요리" }, price: 21000, image: "./images/2.png" },
       { id: 12, name: { ru: "Плов сет", en: "Pilaf set", kr: "플로브 세트" }, desc: { ru: "Плов с добавками", en: "Pilaf set", kr: "플로브 세트" }, price: 21000, image: "./images/2.png" },
@@ -40,11 +32,7 @@ const MENU_DATA = [
   },
   {
     category: "soups",
-    categoryLabel: {
-      ru: "Первые блюда",
-      en: "Soups",
-      kr: "수프"
-    },
+    categoryLabel: { ru: "Первые блюда", en: "Soups", kr: "수프" },
     items: [
       { id: 20, name: { ru: "Солянка классическая", en: "Classic solyanka", kr: "솔랸카" }, desc: { ru: "Большая порция", en: "Large portion", kr: "큰 사이즈" }, price: 12000, image: "./images/3.png" },
       { id: 21, name: { ru: "Шурпа по-восточному", en: "Eastern shurpa", kr: "쇼르파" }, desc: { ru: "Большая порция", en: "Large portion", kr: "큰 사이즈" }, price: 13500, image: "./images/3.png" },
@@ -56,11 +44,7 @@ const MENU_DATA = [
   },
   {
     category: "salads",
-    categoryLabel: {
-      ru: "Салаты",
-      en: "Salads",
-      kr: "샐러드"
-    },
+    categoryLabel: { ru: "Салаты", en: "Salads", kr: "샐러드" },
     items: [
       { id: 26, name: { ru: "Смак", en: "Smak", kr: "스막" }, desc: { ru: "350 г", en: "350 g", kr: "350g" }, price: 15000, image: "./images/4.png" },
       { id: 27, name: { ru: "Оливье классическое", en: "Olivier classic", kr: "올리비에" }, desc: { ru: "350 г", en: "350 g", kr: "350g" }, price: 15000, image: "./images/4.png" },
@@ -78,11 +62,7 @@ const MENU_DATA = [
   },
   {
     category: "cold",
-    categoryLabel: {
-      ru: "Холодные закуски",
-      en: "Cold appetizers",
-      kr: "차가운 전채"
-    },
+    categoryLabel: { ru: "Холодные закуски", en: "Cold appetizers", kr: "차가운 전채" },
     items: [
       { id: 38, name: { ru: "Селёдка с картошкой", en: "Herring with potatoes", kr: "감자와 청어" }, desc: { ru: "450 г", en: "450 g", kr: "450g" }, price: 22500, image: "./images/5.png" },
       { id: 39, name: { ru: "Маринованное ассорти", en: "Marinated assorted", kr: "모둠 피클" }, desc: { ru: "650 г", en: "650 g", kr: "650g" }, price: 18000, image: "./images/5.png" },
@@ -98,11 +78,7 @@ const MENU_DATA = [
   },
   {
     category: "special",
-    categoryLabel: {
-      ru: "Специальные блюда",
-      en: "Special dishes",
-      kr: "스페셜 메뉴"
-    },
+    categoryLabel: { ru: "Специальные блюда", en: "Special dishes", kr: "스페셜 메뉴" },
     items: [
       { id: 48, name: { ru: "Манты из говядины", en: "Beef manti", kr: "소고기 만티" }, desc: { ru: "Паровые манты", en: "Steamed dumplings", kr: "찐 만두" }, price: 13500, image: "./images/6.png" },
       { id: 49, name: { ru: "Ханум по-узбекски", en: "Uzbek khanum", kr: "우즈베크식 하눔" }, desc: { ru: "Традиционный ханум", en: "Traditional khanum", kr: "전통 하눔" }, price: 19500, image: "./images/6.png" },
@@ -117,11 +93,7 @@ const MENU_DATA = [
   },
   {
     category: "mains",
-    categoryLabel: {
-      ru: "Вторые блюда и гарниры",
-      en: "Main dishes & sides",
-      kr: "메인과 사이드"
-    },
+    categoryLabel: { ru: "Вторые блюда и гарниры", en: "Main dishes & sides", kr: "메인과 사이드" },
     items: [
       { id: 57, name: { ru: "Яичница 2 штуки", en: "2 eggs", kr: "계란 2개" }, desc: { ru: "Гарнир", en: "Side", kr: "사이드" }, price: 6000, image: "./images/7.png" },
       { id: 58, name: { ru: "Пюре", en: "Mashed potatoes", kr: "감자 퓌레" }, desc: { ru: "Гарнир", en: "Side", kr: "사이드" }, price: 7000, image: "./images/7.png" },
@@ -140,11 +112,7 @@ const MENU_DATA = [
   },
   {
     category: "desserts",
-    categoryLabel: {
-      ru: "Хлеб, десерты и напитки",
-      en: "Bread, desserts & drinks",
-      kr: "빵, 디저트, 음료"
-    },
+    categoryLabel: { ru: "Хлеб, десерты и напитки", en: "Bread, desserts & drinks", kr: "빵, 디저트, 음료" },
     items: [
       { id: 70, name: { ru: "Самса солёная", en: "Salted samsa", kr: "짭짤한 삼사" }, desc: { ru: "1 штука", en: "1 piece", kr: "1개" }, price: 7000, image: "./images/8.png" },
       { id: 71, name: { ru: "Лепешка молочная", en: "Milk flatbread", kr: "밀크 플랫브레드" }, desc: { ru: "Свежая лепешка", en: "Fresh flatbread", kr: "신선한 빵" }, price: 4000, image: "./images/8.png" },

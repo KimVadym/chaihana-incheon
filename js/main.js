@@ -1,5 +1,5 @@
 const CATEGORY_ICONS = {
-  grill: "fa-skewer",
+  grill: "fa-fire",
   pilaf: "fa-bowl-rice",
   soups: "fa-bowl-food",
   salads: "fa-seedling",
@@ -12,7 +12,7 @@ const CATEGORY_ICONS = {
 const translations = {
   ru: {
     badge: "Традиционная центральноазиатская кухня",
-    title: "Добро пожаловать в Chaikhona",
+    title: "Добро пожаловать в Чайхану",
     subtitle: "Вкусная еда, уютная атмосфера и настоящий вкус в Инчхоне.",
     cartTitle: "Ваш заказ",
     cartEmpty: "Корзина пуста",
@@ -38,7 +38,7 @@ const translations = {
   },
   en: {
     badge: "Traditional Central Asian Cuisine",
-    title: "Welcome to Chaikhona",
+    title: "Welcome to Chaihana",
     subtitle: "Delicious food, cozy atmosphere and authentic taste in Incheon.",
     cartTitle: "Your order",
     cartEmpty: "Cart is empty",
@@ -93,8 +93,9 @@ const translations = {
 let currentLang = "ru";
 let cart = [];
 
-const menuGrid = document.getElementById("menuGrid");
+const topCategoryNav = document.getElementById("topCategoryNav");
 const mobileCategoryNav = document.getElementById("mobileCategoryNav");
+const menuGrid = document.getElementById("menuGrid");
 const langButtons = document.querySelectorAll(".lang-btn");
 
 const cartItems = document.getElementById("cartItems");
@@ -170,7 +171,34 @@ function applyTranslations() {
   }
 }
 
+function renderTopCategoryNav() {
+  if (!topCategoryNav) return;
+
+  topCategoryNav.innerHTML = MENU_DATA.map(section => {
+    const icon = CATEGORY_ICONS[section.category] || "fa-utensils";
+
+    return `
+      <button class="top-category-btn" data-target="${section.category}">
+        <i class="fa-solid ${icon}"></i>
+        <span>${getText(section.categoryLabel)}</span>
+      </button>
+    `;
+  }).join("");
+
+  topCategoryNav.querySelectorAll(".top-category-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.target;
+      document.getElementById(`section-${id}`)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
+}
+
 function renderMobileCategoryNav() {
+  if (!mobileCategoryNav) return;
+
   mobileCategoryNav.innerHTML = MENU_DATA.map((section) => {
     const icon = CATEGORY_ICONS[section.category] || "fa-utensils";
     return `
@@ -439,13 +467,18 @@ function setLanguage(lang) {
   });
 
   applyTranslations();
+  renderTopCategoryNav();
   renderMobileCategoryNav();
   renderMenu();
   renderCart();
 }
 
 function setupSectionObserver() {
-  const buttons = [...document.querySelectorAll(".cat-icon-btn")];
+  const buttons = [
+    ...document.querySelectorAll(".cat-icon-btn"),
+    ...document.querySelectorAll(".top-category-btn")
+  ];
+
   const sections = [...document.querySelectorAll(".menu-category-section")];
 
   const observer = new IntersectionObserver(
@@ -462,8 +495,8 @@ function setupSectionObserver() {
       });
     },
     {
-      rootMargin: "-20% 0px -60% 0px",
-      threshold: [0.2, 0.4, 0.6]
+      rootMargin: "-18% 0px -62% 0px",
+      threshold: [0.2, 0.35, 0.5, 0.7]
     }
   );
 
